@@ -1,0 +1,77 @@
+<nz-layout>
+  @if (windowSize > mobileWidth) {
+    <nz-sider  [nzWidth]="220">
+      <span *ngTemplateOutlet="sideMenu"></span>
+    </nz-sider>
+  } @else {
+    <span class="fixed z-[30]" [class]="windowSize < mobileWidth? 'visible':'hidden'">
+      <div class="overlay" *ngIf="!isCollapsed" (click)="closeDrawer()"></div>
+      <nz-layout class="layout">
+          <nz-sider
+            [nzWidth]="220"
+            nzCollapsible
+            nzBreakpoint="lg"
+            [(nzCollapsed)]="isCollapsed"
+            [nzCollapsedWidth]="0"
+            class="fixed top-0 left-0 h-screen z-50 shadow-xl">
+             <span *ngTemplateOutlet="sideMenu"></span>
+          </nz-sider>
+       </nz-layout>
+    </span>
+  }
+
+  <nz-layout>
+    <nz-header [class]="mobileWidth > windowSize ? 'fixed top-0 left-0 w-full z-20 shadow-md' : ''"
+               class="bg-white px-4 py-2">
+      <div [class]="mobileWidth > windowSize ? 'pt-2' : 'pt-5'" class="flex items-center justify-between w-full">
+        <div [class]="mobileWidth > windowSize ? 'pl-3' : 'pl-5'"
+             class="flex items-start gap-2 flex-grow min-w-0">
+          <div class="cursor-pointer text-lg left-text sm:text-lg font-semibold truncate">
+            {{'power_plate' | translate}}
+            <div class="dashboard-title sm:text-base truncate">{{'dashboard' | translate}}</div>
+          </div>
+          <fa-icon [class]="mobileWidth > windowSize ? 'ml-10' : 'ml-20'" [icon]="caretDown" class="mt-1 cursor-pointer text-sm sm:text-base"></fa-icon>
+        </div>
+
+        <div class="flex items-center gap-1 sm:gap-4 shrink-0">
+          <div class="relative w-10 h-10 sm:w-12 sm:h-12 shrink-0">
+            <img src="assets/images/bg1258-6vi-200h.png" alt="user-logo" class="w-full h-full rounded-full object-cover bg-pink-500" />
+            <span class="absolute inset-0 flex items-center justify-center text-white font-bold text-xs sm:text-sm">HD</span>
+          </div>
+          <div [class]="mobileWidth > windowSize ? 'pr-3' : 'pr-8'" class="">
+            <span class="font-medium text-sm sm:text-base block">TEST</span>
+            <div class="font-medium -mt-1 text-sm sm:text-base">User</div>
+          </div>
+        </div>
+      </div>
+    </nz-header>
+    <nz-content>
+      <router-outlet></router-outlet>
+    </nz-content>
+  </nz-layout>
+</nz-layout>
+
+<ng-template #sideMenu>
+  <div class="pt-10 justify-center flex">
+    <label class="text-pink-700 text-2xl font-bold">Java Community</label>
+  </div>
+
+  <ul class="left-menu pt-5">
+    @for (item of menuItems; track item; let i = $index) {
+      <li (click)="isCollapsed = !isCollapsed">
+        <div (mouseenter)="setHover(i)" (mouseleave)="setHover(null)" [routerLink]="item.link" routerLinkActive="active"
+             [routerLinkActiveOptions]="{ exact: true }" class="flex items-center gap-3 p-2 font">
+          <div [@vibrate]="hoveredIndex === i ? 'vibrating' : 'idle'" class="icon-wrapper w-6 flex justify-center">
+            @if(i === 0) {
+              <fa-icon [icon]="homeIcon" [ngClass]="{'text-pink-500': currentUrl === '/' || currentUrl === '/home'}" class="text-xl"></fa-icon>
+            } @else {
+              <span [nzType]="item.icon" nz-icon nzTheme="outline" [ngClass]="{'active-icon': currentUrl === item.link}" class="text-xl"></span>
+            }
+          </div>
+          <span>{{ item.label }}</span>
+        </div>
+      </li>
+    }
+  </ul>
+
+</ng-template>

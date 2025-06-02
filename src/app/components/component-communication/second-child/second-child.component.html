@@ -1,0 +1,17 @@
+<div class="p-3 bg-gray-100 rounded-md">
+  <h5 class="text-center">{{secondChild}}</h5>
+  <div *ngIf="secondMessage" class="pt-3">
+    <p>{{'message_from_parent' | translate}} <b>{{secondMessage}}</b></p>
+  </div>
+  <div *ngIf="generalMessage" class="pt-3">
+    <p>{{'general_message_to_all' | translate}} <b>{{generalMessage}}</b></p>
+  </div>
+  <hr>
+  <div class="p-2 pt-3">
+    <label class="mb-1">{{'message_parent' | translate}}</label>
+    <div class="w-full p-3">
+      <input type="text" class="border border-gray-300 rounded p-1 mb-2" [(ngModel)]="message">
+      <a class="py-1 px-3 text-lg font-bold" (click)="replyParentComponent()">{{'send' | translate}}</a>
+    </div>
+  </div>
+</div>

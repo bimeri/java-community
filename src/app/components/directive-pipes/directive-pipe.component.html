@@ -1,0 +1,84 @@
+<div class="bg-white rounded-lg p-5 mt-20 ml-5 mr-5 overflow-hidden shadow-[0_10px_25px_-5px_rgba(0,0,0,0.14)]">
+  <h4 class="font left-text text-xl font-semibold mb-5">{{'directives_pipes' | translate}}</h4>
+
+  <!-- Demo Row -->
+  <div class="flex gap-6">
+
+    <!-- Directives -->
+    <div class="w-full p-5 border rounded-lg shadow-sm bg-gray-50">
+      <h5 class="font-bold text-pink-700 mb-5 text-xl">{{'angular_directive_demo' |translate}}</h5>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- 1. Component Directive -->
+        <div class="p-4 border rounded-lg bg-white">
+          <h6 class="underline font-semibold mb-2 pb-5">{{'component_directive' | translate}}</h6>
+          <app-search-bar [placeholder]="'search_here' | translate"></app-search-bar>
+        </div>
+
+        <!-- 2. Structural Directive -->
+        <div class="p-4 border rounded-lg bg-white">
+          <h6 class="underline font-semibold mb-2 pb-5">{{'structural_directive' | translate}}</h6>
+          <button (click)="showList = !showList" class="bg-pink-800 px-3 py-1 rounded mb-3" style="color: white">
+           {{'toggle_list' | translate}}
+          </button>
+          <ul *ngIf="showList" class="list-disc pl-5 text-gray-700 text-left pt-3">
+            <li *ngFor="let item of items">{{ item }}</li>
+          </ul>
+        </div>
+
+        <!-- 3. Attribute Directive -->
+        <div class="p-4 border rounded-lg bg-white">
+          <h6 class="underline font-semibold mb-2 pb-5">{{'attribute_directive' | translate}}</h6>
+          <p [ngStyle]="{ 'color': isStyled ? 'green' : 'gray', 'font-weight': isStyled ? 'bold' : 'normal' }"
+            [ngClass]="{ 'underline': isStyled }"
+            class="mb-3">
+           {{'this_text_change_style' | translate}}
+          </p>
+          <button (click)="isStyled = !isStyled" class="bg-pink-800 text-white px-3 py-1 rounded" style="color: white">
+            {{'toggle_style' | translate }}
+          </button>
+        </div>
+
+        <!-- 4. Custom Directive -->
+        <div class="p-4 border rounded-lg bg-white">
+          <h6 class="underline font-semibold mb-2 pb-5">{{'custom_directive' | translate}}</h6>
+          <p appHoverHighlight class="p-2 border">
+           {{'hover_over_text' |translate}}
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+    <!-- Pipes Demo -->
+    <div class="w-1/2 p-4 border rounded-lg shadow-sm">
+      <h5 class="font-bold text-pink-700 mb-3">{{'pipes' | translate}}</h5>
+
+      <div class="mb-2">
+        <strong class="block text-gray-600">{{ 'Original' |translate }}</strong>
+        <p>{{ today }}</p>
+      </div>
+      <hr/>
+
+      <div class="mb-2 pt-5 text-left">
+        <strong class=" text-gray-600 mr-2">{{'date_pipe' | translate}}</strong>
+        <label>{{ today | date: 'fullDate' }}</label>
+      </div>
+
+      <div class="mb-2 text-left">
+        <strong class="mr-2 text-gray-600">{{'uppercase_pipe' |translate}}</strong>
+        <label>{{ message | uppercase }}</label>
+      </div>
+
+      <div class="text-left">
+        <strong class="mr-2 text-gray-600">{{'currency_pipe' |translate}}</strong>
+        <label>{{ price | currency }}</label>
+      </div>
+
+    </div>
+
+  </div>
+</div>

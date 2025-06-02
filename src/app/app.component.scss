@@ -1,0 +1,132 @@
+$text-color: #031050;
+
+:host {
+  text-align: center;
+}
+.ant-layout {
+  background: #ffffff !important;
+}
+
+nz-header,
+nz-footer {
+  background: #ffffff;
+}
+
+nz-footer {
+  line-height: 1.5;
+  background: transparent;
+}
+
+ nz-sider {
+  background: #fff;
+}
+.outer-content {
+  padding: 0;
+  margin-top: 0;
+}
+
+.left-menu {
+  height: 100%;
+  font-size: 15px;
+  font-family: 'Poppins', serif;
+  font-weight: 400;
+}
+
+nz-layout {
+  margin-bottom: 48px;
+}
+nz-layout,
+nz-layout:last-child {
+  margin: 0;
+}
+.inner-content {
+  padding: 0 24px;
+  min-height: 280px;
+  background: #ffffff;
+}
+nz-footer {
+  text-align: center;
+}
+.logo {
+  width: 164px;
+  height: 27px;
+}
+.header-left {
+  color:$text-color;
+  height: auto;
+  font-size: 24px;
+  font-family: 'Poppins', serif;
+  font-weight: 600;
+}
+.dashboard-title {
+  color: rgba(144, 151, 185, 1);
+  font-size: 15px;
+  font-family: 'Poppins', serif;
+  font-weight: 600;
+  text-align: left;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.updated-partner-details-desktop-group5062 {
+  height: 43px;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.name-label {
+  color: $text-color;
+  font-size: 15px;
+  font-family: 'Poppins', serif;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.label-test {
+  color: $text-color;
+  height: auto;
+  font-size: 19px;
+  font-family: 'Poppins', serif;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.left-side {
+  background-color: #031050;
+  font-family: 'Poppins', serif;
+  border-color: transparent !important;
+}
+
+.active {
+  border-left: 4px solid #FF13B8;
+  background-color: #031050;
+  color: #ffffff !important;
+}
+.active-icon {
+  color: #FF13B8 !important;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.ant-layout-header {
+  padding: 4px !important;
+}
+::ng-deep .ant-layout-sider-zero-width-trigger {
+  background: #ffffff !important;
+  color: $text-color !important;
+  border-right: 1px solid  $text-color;
+  border-top: 1px solid  $text-color;
+  border-bottom: 1px solid  $text-color;
+  margin-top: 0;
+}
+ul > li:hover {
+  background: #e7e7ea !important;
+  cursor: pointer;
+}
