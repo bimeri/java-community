@@ -27,7 +27,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-# Partner Portal - Angular Frontend Assessment
+# Java Community - Angular Frontend Live Demo
 
 ## Overview
 
@@ -48,6 +48,12 @@ branch ``master``
 ## Features
 
 - Fetches partner data from a remote API
+- Angular binding (one way(interpolation), property, event, and two-way)
+- Angular component communication
+- Directives and pipes
+- Angular signals
+- Lazy loading 
+- <br/>
 - Displays the data in a responsive, scrollable table
 - Pagination (15 records per page)
 - Placeholder buttons: **Choose Columns**, **Message Partners** and **Export List**
