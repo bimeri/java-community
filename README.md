@@ -33,10 +33,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 This project is a responsive single-page application (SPA) built with Angular. It displays partner data in a paginated table fetched from a mock API and is styled to match a given Figma design.
 
-## Live Demo
-
-https://bimeri.github.io/java-community/
-
 ## GitHub Repository
 
 https://github.com/bimeri/java-community.git \
