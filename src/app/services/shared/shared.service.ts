@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject, Observable} from "rxjs";
+import {BehaviorSubject, Observable, of} from "rxjs";
 import {ErrorResponseDto} from "../../model/ErrorResponseDto";
 import {ToastService} from "../notification/toast.service";
 import {TranslationService} from "../translation/translation.service";
@@ -14,6 +14,7 @@ export class SharedService {
   // @ts-ignore
   private allPartners: BehaviorSubject<Partner[]> = new BehaviorSubject<Partner[]>();
   public windowWidth$: Observable<number> = this.windowWidthSubject.asObservable();
+  public allPartners$: Observable<BehaviorSubject<Partner[]>> = of(this.allPartners);
 
   constructor(private toastService: ToastService, private translationService: TranslationService) { }
 

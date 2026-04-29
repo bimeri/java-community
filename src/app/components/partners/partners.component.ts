@@ -51,6 +51,9 @@ export class PartnersComponent implements OnInit, OnDestroy{
         this.error = this.globalError.errorMessage;
         this.toastService.showError(this.tService.translateMessage('unknown_error'), this.globalError.detailMessage)
         this.loading = false;
+      },
+      complete: () => {
+        console.log("finish")
       }
     });
   }

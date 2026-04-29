@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {catchError, map, Observable, throwError} from "rxjs";
+import {catchError, delay, map, Observable, of, throwError} from "rxjs";
 import {Partner} from "../../model/partner";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
+import {MOCK_PARTNERS} from "./partners.mock";
 
 @Injectable({
   providedIn: 'root'
@@ -14,13 +15,19 @@ export class PartnerService {
 
   constructor(private http: HttpClient) {}
 
-  getPartners(): Observable<Partner[]> {
+  getPartners_old(): Observable<Partner[]> {
     return this.http.get<Record<number, Partner>>(this.apiUrl).pipe(
       map(response => Object.values(response)),
       catchError(error => {
         console.error('API error:', error);
         return throwError(() => new Error('Failed to fetch partners'));
       })
+    );
+  }
+
+  getPartners(): Observable<Partner[]> {
+    return of(MOCK_PARTNERS).pipe(
+      delay(500)
     );
   }
 

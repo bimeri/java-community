@@ -52,7 +52,6 @@
 
 
 
-
     <!-- Pipes Demo -->
     <div class="w-1/2 p-4 border rounded-lg shadow-sm">
       <h5 class="font-bold text-pink-700 mb-3">{{'pipes' | translate}}</h5>
@@ -63,11 +62,6 @@
       </div>
       <hr/>
 
-      <div class="mb-2 pt-5 text-left">
-        <strong class=" text-gray-600 mr-2">{{'date_pipe' | translate}}</strong>
-        <label>{{ today | date: 'fullDate' }}</label>
-      </div>
-
       <div class="mb-2 text-left">
         <strong class="mr-2 text-gray-600">{{'uppercase_pipe' |translate}}</strong>
         <label>{{ message | uppercase }}</label>
@@ -77,7 +71,15 @@
         <strong class="mr-2 text-gray-600">{{'currency_pipe' |translate}}</strong>
         <label>{{ price | currency }}</label>
       </div>
+      <br/>
+      <p class="font-bold text-purple-300 mt-6">change Date</p>
+      <button class="bg-pink-100 rounded-md p-3" (click)="changeDate()"><b class="text-pink-600">Click to change date</b></button>
 
+
+      <div class="mb-2 pt-5 text-left">
+        <strong class=" text-gray-600 mr-2">{{'date_pipe' | translate}}</strong>
+        <label>{{ today | customDate }}</label>
+      </div>
     </div>
 
   </div>

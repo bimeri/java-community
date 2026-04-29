@@ -8,7 +8,7 @@ import {FaIconComponent, IconDefinition} from "@fortawesome/angular-fontawesome"
 import {faCaretDown, faHome} from "@fortawesome/free-solid-svg-icons";
 import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
 import {SharedService} from "./services/shared/shared.service";
-import {NgClass, NgForOf, NgIf, NgTemplateOutlet} from '@angular/common';
+import {NgClass, NgIf, NgTemplateOutlet} from '@angular/common';
 import {NzIconDirective} from "ng-zorro-antd/icon";
 import {NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import {filter, Subscription} from "rxjs";
@@ -31,10 +31,9 @@ import {TranslationService} from "./services/translation/translation.service";
     TranslatePipe,
     RouterOutlet,
     NgIf,
-    NgForOf,
     RouterLink,
     RouterLinkActive,
-    NgClass,
+    NgClass
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

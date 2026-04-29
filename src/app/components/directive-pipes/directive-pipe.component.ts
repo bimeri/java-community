@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import {CurrencyPipe, DatePipe, NgClass, NgForOf, NgIf, NgStyle, UpperCasePipe} from "@angular/common";
+import {CurrencyPipe, NgClass, NgForOf, NgIf, NgStyle, UpperCasePipe} from "@angular/common";
 import {HeaderDirective} from "../../directives/header.directive";
 import {SearchBarComponent} from "../resources/search-bar/search-bar.component";
 import {TranslatePipe} from "../../pipes/translation/translate.pipe";
+import {CustomDatePipe} from "../../pipes/date/custom-date.pipe";
 
 @Component({
   selector: 'app-directive-pipes',
@@ -10,14 +11,14 @@ import {TranslatePipe} from "../../pipes/translation/translate.pipe";
   imports: [
     UpperCasePipe,
     CurrencyPipe,
-    DatePipe,
     NgIf,
     NgForOf,
     HeaderDirective,
     NgStyle,
     NgClass,
     SearchBarComponent,
-    TranslatePipe
+    TranslatePipe,
+    CustomDatePipe
   ],
   templateUrl: './directive-pipe.component.html',
   styleUrl: './directive-pipe.component.scss'
@@ -34,6 +35,10 @@ export class DirectivePipeComponent {
   price = 1234.56;
 
   isStyled = false;
+
+  changeDate() {
+    this.today = new Date();
+  }
 
 
 }
