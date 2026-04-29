@@ -6,6 +6,7 @@ import {BindingComponent} from "./components/bindging/binding.component";
 import {SignalsComponent} from "./components/signals/signals.component";
 import {ComponentCommunicationComponent} from "./components/component-communication/component-communication.component";
 import {DirectivePipeComponent} from "./components/directive-pipes/directive-pipe.component";
+import {RxjsOperatorComponent} from "./pages/rxjs-operator/rxjs-operator.component";
 
 export const routes: Routes = [
   { path: '', component: DashboardComponent, pathMatch: 'full' },
@@ -16,6 +17,7 @@ export const routes: Routes = [
   { path: 'directives-pipes', component: DirectivePipeComponent },
   { path: 'signals', component: SignalsComponent },
   { path: 'admin', loadChildren: () => import('./admin.routes').then(m => m.adminRoutes) },
+    {path: 'rxjs', component: RxjsOperatorComponent},
 
   { path: '**', component: PageNotFoundComponent }
 ];
